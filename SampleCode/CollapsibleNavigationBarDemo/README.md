@@ -6,7 +6,13 @@ In this sample, we'll review one way to add a Collapsible Navigation Bar to your
 
 If you're a user of Instagram or Facebook, you'll notice that some of the screens hide the navigation bar while the user is scrolling through a list.  Here is an example ...
 
-![Collapsible Naivgation](SampleCode/imgs/navbar_collapse.gif)
+![Collapsible Naivgation](/SampleCode/imgs/navbar_collapse.gif)
+
+![Collapsible Naivgation](./SampleCode/imgs/navbar_collapse.gif)
+
+![Collapsible Naivgation](imgs/navbar_collapse.gif)
+
+![Collapsible Naivgation](./imgs/navbar_collapse.gif)
 
 Notice the following:
 
