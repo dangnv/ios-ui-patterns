@@ -17,7 +17,7 @@ Notice the following:
 
 ####Step 1: Create a UITableViewController and Embed it in a NavigationController
 
-Before we start working on our collapsible Navigation Bar, we'll first need a UITableViewController with enough items in it for us to scroll through.  For this post, we won't review how to do that - as we want to focus on the Navigation Bar bits.  However, feel free to use this <a src="https://github.com/ccabanero/ios-ui-patterns/blob/master/SampleCode/collapsenav_Xcode_starter.zip?raw=true">sample project</a> to get started and follow along.
+Before we start working on our collapsible Navigation Bar, we'll first need a UITableViewController with enough items in it for us to scroll through.  For this post, we won't review how to do that - as we want to focus on the Navigation Bar bits.  However, feel free to use this [sample project](https://github.com/ccabanero/ios-ui-patterns/blob/master/SampleCode/collapsenav_Xcode_starter.zip?raw=true") to get started and follow along.
 
 In the main storyboard, there is a single scene with a UITableViewController.  The TableView consists of static UITableView Cells each representing different Star Wars characters (shout out to [Filipe de Carvalho](https://www.behance.net/gallery/17998561/Star-Wars-Long-Shadow-Flat-Design-Icons) for the art work).  Click on the scene and choose __Editor (menu) -> Embed In -> Navigation Controller__.  Your storyboard should now resemble the following:
 
@@ -108,22 +108,29 @@ Run your App.  As you scroll down, the Navigation Bar now collapses.  As you scr
 Lets fix this.  In your __AppDelegate.swift__ class, update the  __application:didFinishLaunchingWithOptions__ so that we add a subview (the same color as the Navigation Bar) underneath the status bar text.  This way the status bar text doesn't conflict with any of the text in the UITableViewCells.  The application:didFinishLaunchingWithOptions should now resemble this:
 
 ````
-override func viewDidAppear(animated: Bool) {
+func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
-        configureNavigationBarAsHideable()
-    }
-    
-    /**
-     For configuring the NavigationBar to show/hide when user swipes
-     - returns: void
-     */
-    func configureNavigationBarAsHideable() {
+        // For Setting the background color of the Navigation Bar
+        let navigationBarAppearace = UINavigationBar.appearance()
         
-        if let navigationController = self.navigationController {
+        let navigationBarColor = UIColor.blackColor()
+        
+        navigationBarAppearace.barTintColor = navigationBarColor
+        
+        // Add a view in back of status bar text (needed when UINavigationBar is hidden)
+        if let window = self.window {
             
-            // respond to swipe and hide/show
-            navigationController.hidesBarsOnSwipe = true
+            if let rootViewController = window.rootViewController {
+            
+                let view = UIView(frame: CGRectMake(0, 0, rootViewController.view.bounds.width, 20))
+                
+                view.backgroundColor = navigationBarColor
+                
+                rootViewController.view.addSubview(view)
+            }
         }
+        
+        return true
     }
 ````
 
