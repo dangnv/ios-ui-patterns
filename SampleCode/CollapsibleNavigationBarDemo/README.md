@@ -8,12 +8,6 @@ If you're a user of Instagram or Facebook, you'll notice that some of the screen
 
 ![Collapsible Naivgation](/SampleCode/imgs/navbar_collapse.gif)
 
-![Collapsible Naivgation](./SampleCode/imgs/navbar_collapse.gif)
-
-![Collapsible Naivgation](imgs/navbar_collapse.gif)
-
-![Collapsible Naivgation](./imgs/navbar_collapse.gif)
-
 Notice the following:
 
 * As the user scrolls down the list (i.e. UITableView), the Navigation Bar is hidden (collapses upward).  This provides more screen real estate for the content in the list.
@@ -27,7 +21,7 @@ Before we start working on our collapsible Navigation Bar, we'll first need a UI
 
 In the main storyboard, there is a single scene with a UITableViewController.  The TableView consists of static UITableView Cells each representing different Star Wars characters (shout out to [Filipe de Carvalho](https://www.behance.net/gallery/17998561/Star-Wars-Long-Shadow-Flat-Design-Icons) for the art work).  Click on the scene and choose __Editor (menu) -> Embed In -> Navigation Controller__.  Your storyboard should now resemble the following:
 
-![screenshot](SampleCode/imgs/collapsenav-navigationcontroller.png)
+![screenshot](/SampleCode/imgs/collapsenav-navigationcontroller.png)
 
 ####Step 2: Customize the Navigation Bar
 
@@ -81,7 +75,7 @@ override func viewDidLoad() {
 
 Run your App. Your screen should now resemble the following:
 
-![screenshot](SampleCode/imgs/collapsenav-navbar.png)
+![screenshot](/SampleCode/imgs/collapsenav-navbar.png)
 
 ####Step 3: Make your Navigation Bar Collapsible
 
@@ -109,7 +103,7 @@ override func viewDidAppear(animated: Bool) {
 
 Run your App.  As you scroll down, the Navigation Bar now collapses.  As you scroll up, the Navigation Bar re-appears.  However, notice that the white status bar text now conflicts with the text in the TableViewCell.
 
-![screenshot](SampleCode/imgs/collapsenav-conflicttext.png)
+![screenshot](/SampleCode/imgs/collapsenav-conflicttext.png)
 
 Lets fix this.  In your __AppDelegate.swift__ class, update the  __application:didFinishLaunchingWithOptions__ so that we add a subview (the same color as the Navigation Bar) underneath the status bar text.  This way the status bar text doesn't conflict with any of the text in the UITableViewCells.  The application:didFinishLaunchingWithOptions should now resemble this:
 
@@ -135,7 +129,7 @@ override func viewDidAppear(animated: Bool) {
 
 Run your App.  Confirm that the status bar now has a solid background color in back of it when the Navigation Bar is collapsed.
 
-![screenshot](SampleCode/imgs/collapsenav-noconflict.png)
+![screenshot](/SampleCode/imgs/collapsenav-noconflict.png)
 
 ####Step 4: Show the Navigation Bar after Tapping the Status Bar
 
