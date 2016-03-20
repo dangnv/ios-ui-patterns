@@ -17,7 +17,7 @@ Notice the following:
 
 ####Step 1: Create a UITableViewController and Embed it in a NavigationController
 
-Before we start working on our collapsible Navigation Bar, we'll first need a UITableViewController with enough items in it for us to scroll through.  For this post, we won't review how to do that - as we want to focus on the Navigation Bar bits.  However, feel free to use this <a src="https://github.com/ccabanero/ios-ui-patterns/SampleCode/collapsenav_Xcode_starter.zip">sample project</a> to get started and follow along.
+Before we start working on our collapsible Navigation Bar, we'll first need a UITableViewController with enough items in it for us to scroll through.  For this post, we won't review how to do that - as we want to focus on the Navigation Bar bits.  However, feel free to use this <a src="https://github.com/ccabanero/ios-ui-patterns/blob/master/SampleCode/collapsenav_Xcode_starter.zip?raw=true">sample project</a> to get started and follow along.
 
 In the main storyboard, there is a single scene with a UITableViewController.  The TableView consists of static UITableView Cells each representing different Star Wars characters (shout out to [Filipe de Carvalho](https://www.behance.net/gallery/17998561/Star-Wars-Long-Shadow-Flat-Design-Icons) for the art work).  Click on the scene and choose __Editor (menu) -> Embed In -> Navigation Controller__.  Your storyboard should now resemble the following:
 
